@@ -97,15 +97,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var communicationsAbility: UILabel!
     @IBOutlet weak var financeAbility: UILabel!
     @IBOutlet weak var forceAbility: UILabel!
-
+    let C = Communications()
+    let F = Finance()
+    let Fo = Force()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        print(C.List[0]["Ability"] ?? "bob")
+        communicationsAbility.text = C.List[0]["Ability"]
+        financeAbility.text = F.List[0]["Ability"]
+        forceAbility.text = Fo.List[0]["Ability"]
     }
     
     func rand() -> Int{
