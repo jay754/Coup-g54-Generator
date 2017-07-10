@@ -94,7 +94,9 @@ struct Force {
 
 class ViewController: UIViewController {
     
-//    let CommunicationsList = [Dictionary<String, String>]()
+    @IBOutlet weak var communicationsAbility: UILabel!
+    @IBOutlet weak var financeAbility: UILabel!
+    @IBOutlet weak var forceAbility: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +107,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func rand() -> Int{
+        let diceRoll = Int(arc4random_uniform(UInt32(6)))
+        return diceRoll
+    }
 
 }
 
