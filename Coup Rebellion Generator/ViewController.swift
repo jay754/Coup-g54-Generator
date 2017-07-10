@@ -21,7 +21,7 @@ class Card {
     }
 }
 
-struct Communiactions {
+struct Communications {
     let List = [
         [
             "Title": "Director",
@@ -32,12 +32,65 @@ struct Communiactions {
             "Ability": " Take one card from the deck and 1 credit"
         ],
         [
-            "Writer": "Take one card from the deck. After looking at the card, may pay 1 credit to take one more card from the deck (repeatable"
+            "Title": "Writer",
+            "Ability": "Take one card from the deck. After looking at the card, may pay 1 credit to take one more card from the deck (repeatable"
+        ],
+        [
+            "Title": "Newscaster",
+            "Ability": "Pay 1 credit and take three cards from the deck."
         ]
     ]
 }
 
-struct Finance {}
+struct Finance {
+    let List = [
+        [
+            "Title": "Speculator",
+            "Ability": "Double your credits (max. 5). If successfully challenged, return extra credits to the treasury and pay challenger your initial amount."
+        ],
+        [
+            "Title": "Capitalist",
+            "Ability": " Take 4 credits. Other players can then also claim to be a Capitalist. Once all challenges are resolved, pay 1 credit to every other surviving Capitalist."
+        ],
+        [
+            "Title": "Banker",
+            "Ability": "Take 3 credits"
+        ],
+        [
+            "Title": "Farmer",
+            "Ability": "Take 3 credits and give 1 credit to another player."
+        ],
+        [
+            "Title": "Spy",
+            "Ability": "Take 1 credit and another action"
+        ]
+    ]
+}
+
+struct Force {
+    let List = [
+        [
+            "Title": "Guerilla",
+            "Ability": " Pay 4 credits to make target lose a life."
+        ],
+        [
+            "Title": "Mercenary",
+            "Ability": "Pay 3 credits to place Disappear token on a target. Target loses a life at the end of their next turn."
+        ],
+        [
+            "Title": "Crime Boss",
+            "Ability": "Choose a target. Target can give you 2 credits to end turn. Otherwise, pay 5 credits to make target lose a life."
+        ],
+        [
+            "Title": "Judge",
+            "Ability": "Give 3 credits to target to make target lose a life. If target counteracts, she keeps the 3 credits"
+        ],
+        [
+            "Title": "General",
+            "Ability": "Pay 5 credits to make all other players lose a life"
+        ]
+    ]
+}
 
 class ViewController: UIViewController {
     
