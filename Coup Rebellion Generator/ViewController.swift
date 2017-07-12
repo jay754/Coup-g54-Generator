@@ -92,6 +92,51 @@ struct Force {
     ]
 }
 
+struct specialInterests {
+    let list = [
+        [
+            "Title": "Foreign Consular",
+            "Ability": "Take the two Treaty tokens. Keep one and give the other to another player. You cannot target each other (including with coups)"
+        ],
+        [
+            "Title": "Communist",
+            "Ability": "Take up to 3 credits from richest player and give them to poorest player"
+        ],
+        [
+            "Title": "Lawyer",
+            "Ability": "When another player is eliminated, you may take all their credits."
+        ],
+        [
+            "Title": "Customs Officer",
+            "Ability": "Take the two Tax tokens. Keep one and place the other on a role card. Other players must give you 1 credit before claiming the chosen role"
+        ],
+        [
+            "Title": "Peacekeeper",
+            "Ability": "Take 1 credit and the Peacekeeping token. You cannot be targeted while you have the token (coups against you are still possible)"
+        ],
+        [
+            "Title": "Missionary:",
+            "Ability": "If you lose a life (except in a coup), you may claim to be a Missionary to take one card from the deck. If successfully challenged, lose another life. If unsuccessfully challenged, challenger loses a life"
+        ],
+        [
+            "Title": "Politician",
+            "Ability": "Take up to 2 credits from target."
+        ],
+        [
+            "Title": "Protester",
+            "Ability": "Pay 2 credits and choose a target. Another player can then pay 3 credits to make the target lose a life."
+        ],
+        [
+            "Title": "Intellectual",
+            "Ability": " If you lose a life, you may claim to be Intellectual to take 5 credits. If successfully challenged, lose another life. If unsuccessfully challenged, challenger loses a life."
+        ],
+        [
+            "Title": "Priest",
+            "Ability": "All other players give you 1 credit."
+        ]
+    ]
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var communicationsAbility: UILabel!
@@ -100,19 +145,31 @@ class ViewController: UIViewController {
     let C = Communications()
     let F = Finance()
     let Fo = Force()
-    
+    let sp1 = specialInterests()
+    let sp2 = specialInterests()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let r = rand()
         
-        print(C.List[0]["Ability"] ?? "bob")
-        communicationsAbility.text = C.List[0]["Ability"]
-        financeAbility.text = F.List[0]["Ability"]
-        forceAbility.text = Fo.List[0]["Ability"]
+        communicationsAbility.text = String(r.0)
+        financeAbility.text = String(r.0)
+        forceAbility.text = String(r.1)
     }
     
-    func rand() -> Int{
-        let diceRoll = Int(arc4random_uniform(UInt32(6)))
-        return diceRoll
+    func rand() -> (cRoll: Int, fiRoll: Int, foRoll: Int, sp1: Int, sp2: Int){
+        let cRoll = Int(arc4random_uniform(UInt32(4)))
+        let fiRoll = Int(arc4random_uniform(UInt32(5)))
+        let foRoll = Int(arc4random_uniform(UInt32(5)))
+        var sp1 = Int(arc4random_uniform(UInt32(10)))
+        var sp2 = Int(arc4random_uniform(UInt32(10)))
+        
+        while sp1 == sp2 {
+            sp1 = Int(arc4random_uniform(UInt32(10)))
+            sp2 = Int(arc4random_uniform(UInt32(10)))
+        }
+        
+        return (cRoll, fiRoll, foRoll, sp1, sp2)
     }
 
 }
