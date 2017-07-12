@@ -8,40 +8,6 @@
 
 import UIKit
 
-class Card {
-    
-    var TypeCard: String
-    var Title: String
-    var Ability: String
-    
-    init(TypeCard: String, Title: String, Ability: String){
-        self.TypeCard = TypeCard
-        self.Title = Title
-        self.Ability = Ability
-    }
-}
-
-struct Communications {
-    let List = [
-        [
-            "Title": "Director",
-            "Ability": "Take two cards from the deck"
-        ],
-        [
-            "Title": "Reporter",
-            "Ability": " Take one card from the deck and 1 credit"
-        ],
-        [
-            "Title": "Writer",
-            "Ability": "Take one card from the deck. After looking at the card, may pay 1 credit to take one more card from the deck (repeatable"
-        ],
-        [
-            "Title": "Newscaster",
-            "Ability": "Pay 1 credit and take three cards from the deck."
-        ]
-    ]
-}
-
 struct Finance {
     let List = [
         [
@@ -142,6 +108,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var communicationsAbility: UILabel!
     @IBOutlet weak var financeAbility: UILabel!
     @IBOutlet weak var forceAbility: UILabel!
+    @IBOutlet weak var sp1Ability: UILabel!
+    @IBOutlet weak var sp2Ability: UILabel!
+    
     let C = Communications()
     let F = Finance()
     let Fo = Force()
@@ -153,8 +122,10 @@ class ViewController: UIViewController {
         let r = rand()
         
         communicationsAbility.text = String(r.0)
-        financeAbility.text = String(r.0)
-        forceAbility.text = String(r.1)
+        financeAbility.text = String(r.1)
+        forceAbility.text = String(r.2)
+        sp1Ability.text = String(r.3)
+        sp2Ability.text = String(r.4)
     }
     
     func rand() -> (cRoll: Int, fiRoll: Int, foRoll: Int, sp1: Int, sp2: Int){
