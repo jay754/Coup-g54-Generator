@@ -15,6 +15,9 @@
 		695D98911F10718300A6A52C /* Coup_Rebellion_GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D98901F10718300A6A52C /* Coup_Rebellion_GeneratorTests.swift */; };
 		699469AF1F15C819008FF0F7 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699469AE1F15C819008FF0F7 /* CardModel.swift */; };
 		699469B11F15C87F008FF0F7 /* CommunicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699469B01F15C87F008FF0F7 /* CommunicationModel.swift */; };
+		699469B31F15C942008FF0F7 /* FinanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699469B21F15C942008FF0F7 /* FinanceModel.swift */; };
+		699469B51F15C96C008FF0F7 /* ForceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699469B41F15C96C008FF0F7 /* ForceModel.swift */; };
+		699469B71F15C9A9008FF0F7 /* SpecialInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699469B61F15C9A9008FF0F7 /* SpecialInterest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		695D98921F10718300A6A52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		699469AE1F15C819008FF0F7 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		699469B01F15C87F008FF0F7 /* CommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationModel.swift; sourceTree = "<group>"; };
+		699469B21F15C942008FF0F7 /* FinanceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceModel.swift; sourceTree = "<group>"; };
+		699469B41F15C96C008FF0F7 /* ForceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceModel.swift; sourceTree = "<group>"; };
+		699469B61F15C9A9008FF0F7 /* SpecialInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialInterest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,9 @@
 				695D98871F10718300A6A52C /* Info.plist */,
 				699469AE1F15C819008FF0F7 /* CardModel.swift */,
 				699469B01F15C87F008FF0F7 /* CommunicationModel.swift */,
+				699469B21F15C942008FF0F7 /* FinanceModel.swift */,
+				699469B41F15C96C008FF0F7 /* ForceModel.swift */,
+				699469B61F15C9A9008FF0F7 /* SpecialInterest.swift */,
 			);
 			path = "Coup Rebellion Generator";
 			sourceTree = "<group>";
@@ -207,8 +216,11 @@
 			files = (
 				695D987E1F10718300A6A52C /* ViewController.swift in Sources */,
 				695D987C1F10718300A6A52C /* AppDelegate.swift in Sources */,
+				699469B31F15C942008FF0F7 /* FinanceModel.swift in Sources */,
+				699469B71F15C9A9008FF0F7 /* SpecialInterest.swift in Sources */,
 				699469B11F15C87F008FF0F7 /* CommunicationModel.swift in Sources */,
 				699469AF1F15C819008FF0F7 /* CardModel.swift in Sources */,
+				699469B51F15C96C008FF0F7 /* ForceModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
