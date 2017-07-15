@@ -26,11 +26,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let r = rand()
         
-        communicationsAbility.text = String(r.0)
-        financeAbility.text = String(r.1)
-        forceAbility.text = String(r.2)
-        sp1Ability.text = String(r.3)
-        sp2Ability.text = String(r.4)
+        communicationsAbility.text = String(C.List[r.0]["Ability"]!)
+        financeAbility.text = String(F.List[r.1]["Ability"]!)
+        forceAbility.text = String(Fo.List[r.2]["Ability"]!)
+        sp1Ability.text = String(sp1.List[r.3]["Ability"]!)
+        sp2Ability.text = String(sp2.List[r.4]["Ability"]!)
     }
     
     func rand() -> (cRoll: Int, fiRoll: Int, foRoll: Int, sp1: Int, sp2: Int){

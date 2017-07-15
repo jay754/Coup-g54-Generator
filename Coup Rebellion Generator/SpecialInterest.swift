@@ -9,7 +9,7 @@
 import Foundation
 
 struct specialInterests {
-    let list = [
+    let List = [
         [
             "Title": "Foreign Consular",
             "Ability": "Take the two Treaty tokens. Keep one and give the other to another player. You cannot target each other (including with coups)"
