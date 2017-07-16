@@ -24,13 +24,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let r = rand()
         
-        communicationsAbility.text = String(C.List[r.0]["Ability"]!)
-        financeAbility.text = String(F.List[r.1]["Ability"]!)
-        forceAbility.text = String(Fo.List[r.2]["Ability"]!)
-        sp1Ability.text = String(sp1.List[r.3]["Ability"]!)
-        sp2Ability.text = String(sp2.List[r.4]["Ability"]!)
+        selectItems()
     }
     
     func rand() -> (cRoll: Int, fiRoll: Int, foRoll: Int, sp1: Int, sp2: Int){
@@ -48,5 +43,19 @@ class ViewController: UIViewController {
         return (cRoll, fiRoll, foRoll, sp1, sp2)
     }
 
+    func selectItems(){
+        let r = rand()
+        
+        communicationsAbility.text = String(C.List[r.0]["Ability"]!)
+        financeAbility.text = String(F.List[r.1]["Ability"]!)
+        forceAbility.text = String(Fo.List[r.2]["Ability"]!)
+        sp1Ability.text = String(sp1.List[r.3]["Ability"]!)
+        sp2Ability.text = String(sp2.List[r.4]["Ability"]!)
+    }
+    
+    @IBAction func generate(){
+        selectItems()
+    }
+    
 }
 
