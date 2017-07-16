@@ -24,13 +24,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var sp1Ability: UILabel!
     @IBOutlet weak var sp2Ability: UILabel!
     
+    // init for labels to make sure they're available throughout
+    public var labels: [UILabel] = []
+    
     // Initiate for data
     let C = Communications()
     let F = Finance()
     let Fo = Force()
     let sp1 = specialInterests()
     let sp2 = specialInterests()
+    
+    // click button action
+    @IBAction func generate() {
+        selectItems()
+    }
+    
+    // getting the ui labels
+    func getLabels() {
+        
+        for subview in self.view.subviews as [UIView] {
+            if let lab = subview as? UILabel{
+                if lab.text! == "Ability" || lab.text! == "Title" {
+                    self.labels.append(lab)
+                }
+            }
+        }
 
+    }
+    
     // onload method
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +60,7 @@ class ViewController: UIViewController {
     }
     
     //random num generator -> returns a tuple
-    func rand() -> (cRoll: Int, fiRoll: Int, foRoll: Int, sp1: Int, sp2: Int) {
+    private func rand() -> (cRoll: Int, fiRoll: Int, foRoll: Int, sp1: Int, sp2: Int) {
         let cRoll = Int(arc4random_uniform(UInt32(4)))
         let fiRoll = Int(arc4random_uniform(UInt32(5)))
         let foRoll = Int(arc4random_uniform(UInt32(5)))
@@ -55,52 +76,34 @@ class ViewController: UIViewController {
     }
     
     // resizing the label to fit text
-    func rSize(lab: UILabel, content: String) {
+    private func rSize(lab: UILabel, content: String) {
         lab.text = content
         lab.adjustsFontSizeToFitWidth = true
         lab.sizeToFit()
         lab.textAlignment = .center
     }
     
-    // click button action
-    @IBAction func generate() {
-        selectItems()
-    }
-    
     // for getting the text and the data
-    func selectItems() {
+    private func selectItems() {
         let r = rand()
-        let labels: [UILabel] = getLabels()
+        getLabels()
+        var i = 0
         
         let data: [String] = [ String(C.List[r.0]["Title"]!),
-                                 String(F.List[r.1]["Title"]!),
-                                 String(Fo.List[r.2]["Title"]!),
-                                 String(sp1.List[r.3]["Title"]!),
-                                 String(sp2.List[r.4]["Title"]!),
-                                 String(C.List[r.0]["Ability"]!),
-                                 String(F.List[r.1]["Ability"]!),
-                                 String(Fo.List[r.2]["Ability"]!),
-                                 String(sp1.List[r.3]["Ability"]!),
-                                 String(sp2.List[r.4]["Ability"]!) ]
+                               String(F.List[r.1]["Title"]!),
+                               String(Fo.List[r.2]["Title"]!),
+                               String(sp1.List[r.3]["Title"]!),
+                               String(sp2.List[r.4]["Title"]!),
+                               String(C.List[r.0]["Ability"]!),
+                               String(F.List[r.1]["Ability"]!),
+                               String(Fo.List[r.2]["Ability"]!),
+                               String(sp1.List[r.3]["Ability"]!),
+                               String(sp2.List[r.4]["Ability"]!) ]
         
-//        for (index) in data.enumerated() {
-//            print(index)
-//        }
-    }
-    
-    // getting the ui labels
-    func getLabels() -> Array<UILabel>! {
-        var labels: [UILabel] = []
-        
-        for subview in self.view.subviews as [UIView] {
-            if let lab = subview as? UILabel{
-                if lab.text! == "Ability" || lab.text! == "Title" {
-                    labels.append(lab)
-                }
-            }
+        for element in self.labels {
+            rSize(lab: element, content: data[i])
+            i += 1
         }
-
-        return labels
     }
     
 }
