@@ -70,18 +70,37 @@ class ViewController: UIViewController {
     // for getting the text and the data
     func selectItems() {
         let r = rand()
+        let labels: [UILabel] = getLabels()
         
-        rSize(lab: communicationsTitle, content: String(C.List[r.0]["Title"]!))
-        rSize(lab: financeTitle, content: String(F.List[r.1]["Title"]!))
-        rSize(lab: forceTitle, content: String(Fo.List[r.2]["Title"]!))
-        rSize(lab: sp1Title, content: String(sp1.List[r.3]["Title"]!))
-        rSize(lab: sp2Title, content: String(sp2.List[r.4]["Title"]!))
+        let data: [String] = [ String(C.List[r.0]["Title"]!),
+                                 String(F.List[r.1]["Title"]!),
+                                 String(Fo.List[r.2]["Title"]!),
+                                 String(sp1.List[r.3]["Title"]!),
+                                 String(sp2.List[r.4]["Title"]!),
+                                 String(C.List[r.0]["Ability"]!),
+                                 String(F.List[r.1]["Ability"]!),
+                                 String(Fo.List[r.2]["Ability"]!),
+                                 String(sp1.List[r.3]["Ability"]!),
+                                 String(sp2.List[r.4]["Ability"]!) ]
         
-        rSize(lab: communicationsAbility, content: String(C.List[r.0]["Ability"]!))
-        rSize(lab: financeAbility, content: String(F.List[r.1]["Ability"]!))
-        rSize(lab: forceAbility, content: String(Fo.List[r.2]["Ability"]!))
-        rSize(lab: sp1Ability, content: String(sp1.List[r.3]["Ability"]!))
-        rSize(lab: sp2Ability, content: String(sp2.List[r.4]["Ability"]!))
+//        for (index) in data.enumerated() {
+//            print(index)
+//        }
+    }
+    
+    // getting the ui labels
+    func getLabels() -> Array<UILabel>! {
+        var labels: [UILabel] = []
+        
+        for subview in self.view.subviews as [UIView] {
+            if let lab = subview as? UILabel{
+                if lab.text! == "Ability" || lab.text! == "Title" {
+                    labels.append(lab)
+                }
+            }
+        }
+
+        return labels
     }
     
 }
